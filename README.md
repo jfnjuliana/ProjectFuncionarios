@@ -1,6 +1,5 @@
 # # Olá! Eu sou a Juliana Nunes!
 
-- 🌱 Estudante de Análise e Desenvolvimento de Sistemas.
 - 🌱 Estudando o React.
 - 📫 Contate-me no e-mail: jfnjuliana@gmail.com
 - 😄 Pronouns: ela/dela
