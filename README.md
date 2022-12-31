@@ -1,4 +1,4 @@
-# # Olá! Eu sou a Juliana Nunes!
+# # Olá! Eu sou a Juliana Farias Nunes!
 
 - 🌱 Estudando o React.
 - 📫 Contate-me no e-mail: jfnjuliana@gmail.com
