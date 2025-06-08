@@ -53,6 +53,13 @@ namespace WebAPI_Video.Controllers
 
         }
 
+        [HttpPut("AlteraStatusFuncionario/{id}/{status}")]
+        public async Task<ActionResult<ServiceResponse<List<FuncionarioModel>>>> AlteraStatusFuncionario(int id, bool status)
+        {
+            var serviceResponse = await _funcionarioInterface.AlterarStatusFuncionario(id, status);
+            return Ok(serviceResponse);
+        }
+
         [HttpDelete]
         public async Task<ActionResult<ServiceResponse<List<FuncionarioModel>>>> DeleteFuncionario(int id)
         {

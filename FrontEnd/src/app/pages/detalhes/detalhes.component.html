@@ -62,9 +62,11 @@
 
 
 
-<div class="btn-box">
-    <a  (click)="InativaFuncionario()"  mat-raised-button color="warn">Inativar Usuário</a>
-    <a  routerLink=""  mat-raised-button>Voltar</a>
+<div class="btn-box" *ngIf="funcionario">
+  <a (click)="AlterarStatusFuncionario()" mat-raised-button [color]="funcionario.ativo ? 'warn' : 'primary'">
+    {{ funcionario.ativo ? 'Inativar Usuário' : 'Ativar Usuário' }}
+  </a>
+  <a routerLink="" mat-raised-button>Voltar</a>
 </div>
 
 

@@ -166,6 +166,27 @@ namespace WebAPI_Video.Service.FuncionarioService
             return serviceResponse;
         }
 
+        public async Task<ServiceResponse<List<FuncionarioModel>>> AlterarStatusFuncionario(int id, bool status)
+        {
+            var response = new ServiceResponse<List<FuncionarioModel>>();
+            var funcionario = await _context.Funcionarios.FindAsync(id);
+
+        if (funcionario == null)
+        {
+            response.Sucesso = false;
+            response.Mensagem = "Funcionário não encontrado.";
+            return response;
+        }
+
+            funcionario.Ativo = status;
+            await _context.SaveChangesAsync();
+
+            response.Dados = await _context.Funcionarios.ToListAsync();
+            response.Mensagem = status ? "Funcionário ativado com sucesso." : "Funcionário inativado com sucesso.";
+            return response;
+        }
+
+
         public async Task<ServiceResponse<List<FuncionarioModel>>> UpdateFuncionario(FuncionarioModel editadoFuncionario)
         {
             ServiceResponse<List<FuncionarioModel>> serviceResponse = new ServiceResponse<List<FuncionarioModel>>();
